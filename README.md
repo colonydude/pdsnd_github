@@ -21,5 +21,5 @@ bikeshare.py
 * washington.csv
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
-
+Date used came from [Motivateco](https://www.motivateco.com/)
+Project request from [Udacity](https://www.udacity.com)
