@@ -5,16 +5,20 @@ April 4 2020
 Bike Share Data
 
 ### Description
-Describe what your project is about and what it does
+This project will import the data and answer interesting questions about it by computing descriptive statistics.
+This project will show statistics for each of the following:
+* Popular timnes of travel
+* Popular stations and trips
+* Trip duractions
+* User information
 
 ### Files used
 bikeshare.py
 
-Data Files not Included
------------------------
-chicago.csv
-mew_york_city.csv
-washington.csv
+#### Data Files not Included
+* chicago.csv
+* mew_york_city.csv
+* washington.csv
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
