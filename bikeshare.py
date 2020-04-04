@@ -13,6 +13,10 @@ CITY_MONTHS = ('january', 'febuary', 'march', 'april', 'may', 'june')
 CITY_DAYS = ('sunday', 'monday', 'tuesday', 'wednesday',
              'thursday', 'friday', 'saturday')
 
+YES_NO_CHOICES = ('yes', 'no', 'y', 'n')
+
+NO_CHOICES = ('no', 'n')
+
 
 def get_city():
     '''Ask the person to specify a city to analyze.
@@ -340,7 +344,6 @@ def display_data(df, how_many_lines_to_show=5):
 
     head = 0
     tail = int(how_many_lines_to_show)
-    choices = ('yes', 'no', 'y', 'n')
     choice = ''
 
     df['Trip Duration'].fillna(0, inplace=True)
@@ -352,19 +355,19 @@ def display_data(df, how_many_lines_to_show=5):
     if 'Birth Year' in df:
         df['Birth Year'].fillna('', inplace=True)
 
-    while choice not in choices:
+    while choice not in YES_NO_CHOICES:
         choice = input('\nWould you like to see individual trip data ({})?'
-                       ' '.format(', '.join(choices).title())).lower()
+                       ' '.format(', '.join(YES_NO_CHOICES).title())).lower()
 
-    while (choice in choices) and (choice not in ('no', 'n')):
+    while (choice in YES_NO_CHOICES) and (choice not in NO_CHOICES):
         # prints every column except the 'journey' column created
         # in statistics()
         print(df[df.columns[0:-1]].iloc[head:tail])
 
         choice = ''
-        while choice not in choices:
+        while choice not in YES_NO_CHOICES:
             choice = input('\nWould you like to see more individual trip data '
-                           '({})? '.format(', '.join(choices).title())).lower()
+                           '({})? '.format(', '.join(YES_NO_CHOICES).title())).lower()
 
             if choice in ('yes', 'y'):
                 head += int(how_many_lines_to_show)
@@ -405,13 +408,12 @@ def main():
             user_stats(df)
             display_data(df, 5)
 
-            choices = ('yes', 'no', 'y', 'n')
             restart = ''
-            while restart not in choices:
+            while restart not in YES_NO_CHOICES:
                 restart = input('\nWould you like to restart ({})?'
-                                ' '.format(', '.join(choices).title())).lower()
+                                ' '.format(', '.join(YES_NO_CHOICES).title())).lower()
 
-            if restart in ('no', 'n'):
+            if restart in NO_CHOICES:
                 exit_loop = True
 
 
