@@ -15,6 +15,8 @@ CITY_DAYS = ('sunday', 'monday', 'tuesday', 'wednesday',
 
 YES_NO_CHOICES = ('yes', 'no', 'y', 'n')
 
+NO_CHOICES = ('no', 'n')
+
 
 def get_city():
     '''Ask the person to specify a city to analyze.
@@ -357,7 +359,7 @@ def display_data(df, how_many_lines_to_show=5):
         choice = input('\nWould you like to see individual trip data ({})?'
                        ' '.format(', '.join(YES_NO_CHOICES).title())).lower()
 
-    while (choice in YES_NO_CHOICES) and (choice not in ('no', 'n')):
+    while (choice in YES_NO_CHOICES) and (choice not in NO_CHOICES):
         # prints every column except the 'journey' column created
         # in statistics()
         print(df[df.columns[0:-1]].iloc[head:tail])
@@ -411,7 +413,7 @@ def main():
                 restart = input('\nWould you like to restart ({})?'
                                 ' '.format(', '.join(YES_NO_CHOICES).title())).lower()
 
-            if restart in ('no', 'n'):
+            if restart in NO_CHOICES:
                 exit_loop = True
 
 
